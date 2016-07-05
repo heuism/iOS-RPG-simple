@@ -85,7 +85,7 @@ class ViewController: UIViewController {
             if ((player1Timer?.isValid) != nil) {
                 player1Timer?.invalidate()
             }
-            hitpoint = player2.gotHit(hitpoint: player1.playerAttackPwr)
+            hitpoint = player1.gotHit(hitpoint: player1.playerAttackPwr)
             updateResult(result: "\(player1.playerName) got hit \(hitpoint) dmg")
             updateHP(player: player1)
             player1AtkBG.isEnabled = false
@@ -97,16 +97,28 @@ class ViewController: UIViewController {
             print("")
         }
         if checkIfDead() {
+            player1Timer?.invalidate()
+            player2Timer?.invalidate()
+            unEnableTheAttack()
             resetBtnBG.isHidden = false
             resetBtnLbl.isHidden = false
         }
     }
     
     func reEnableTheAttack() {
+        
         player2AtkBG.isEnabled = true
         player2AtkLbl.isEnabled = true
         player1AtkBG.isEnabled = true
         player1AtkLbl.isEnabled = true
+    }
+    
+    func unEnableTheAttack() {
+        
+        player2AtkBG.isEnabled = false
+        player2AtkLbl.isEnabled = false
+        player1AtkBG.isEnabled = false
+        player1AtkLbl.isEnabled = false
     }
     
     func initData() {
@@ -142,7 +154,7 @@ class ViewController: UIViewController {
             }
             else {
                 player1HP.text = ""
-                updateResult(result: "Player1 die!!!")
+                updateResult(result: "\(player1.playerName) die!!!")
             }
         }
         else{
@@ -151,7 +163,7 @@ class ViewController: UIViewController {
             }
             else {
                 player2HP.text = ""
-                updateResult(result: "Player2 die!!!")
+                updateResult(result: "\(player2.playerName) die!!!")
             }
         }
     }
