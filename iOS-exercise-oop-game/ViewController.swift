@@ -76,8 +76,8 @@ class ViewController: UIViewController {
                 player2Timer?.invalidate()
             }
             hitpoint = player2.gotHit(hitpoint: player1.playerAttackPwr)
-            updateHP(player: player2)
             updateResult(result: "\(player2.playerName) got hit \(hitpoint) dmg")
+            updateHP(player: player2)
             player2AtkBG.isEnabled = false
             player2AtkLbl.isEnabled = false
             player2Timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(ViewController.reEnableTheAttack), userInfo: nil, repeats: false)
@@ -85,10 +85,9 @@ class ViewController: UIViewController {
             if ((player1Timer?.isValid) != nil) {
                 player1Timer?.invalidate()
             }
-            player1.gotHit(hitpoint: player2.playerAttackPwr)
-            updateHP(player: player1)
             hitpoint = player2.gotHit(hitpoint: player1.playerAttackPwr)
             updateResult(result: "\(player1.playerName) got hit \(hitpoint) dmg")
+            updateHP(player: player1)
             player1AtkBG.isEnabled = false
             player1AtkLbl.isEnabled = false
             player1Timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(ViewController.reEnableTheAttack), userInfo: nil, repeats: false)
