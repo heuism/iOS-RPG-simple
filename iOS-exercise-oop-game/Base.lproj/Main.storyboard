@@ -132,18 +132,18 @@
                                     <action selector="BtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cXX-z0-wwv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 HP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqq-81-ywM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 HP" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqq-81-ywM">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="2Gc-6P-3DA"/>
+                                    <constraint firstAttribute="width" constant="70" id="2Gc-6P-3DA"/>
                                     <constraint firstAttribute="height" constant="21" id="ar1-j5-rBO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 HP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5T-ds-UB7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 HP" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5T-ds-UB7">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="QSP-5w-NyJ"/>
+                                    <constraint firstAttribute="width" constant="70" id="QSP-5w-NyJ"/>
                                     <constraint firstAttribute="height" constant="21" id="YNa-xP-ZCW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Minecraft" family="Minecraft" pointSize="17"/>
@@ -160,7 +160,7 @@
                             <constraint firstItem="2AA-FQ-Gkx" firstAttribute="centerY" secondItem="Hi0-BZ-6xW" secondAttribute="centerY" id="G0x-5q-e4b"/>
                             <constraint firstItem="NxV-Pg-eGN" firstAttribute="centerY" secondItem="2AA-FQ-Gkx" secondAttribute="centerY" id="GfH-rs-5B5"/>
                             <constraint firstItem="5z1-QU-6IV" firstAttribute="centerX" secondItem="Hi0-BZ-6xW" secondAttribute="centerX" id="Lr5-vD-Xle"/>
-                            <constraint firstItem="fwz-tk-Ana" firstAttribute="top" secondItem="kDv-Tg-cBG" secondAttribute="bottom" id="OiB-WF-4zb"/>
+                            <constraint firstItem="fwz-tk-Ana" firstAttribute="top" secondItem="kDv-Tg-cBG" secondAttribute="bottom" constant="8" id="OiB-WF-4zb"/>
                             <constraint firstItem="5z1-QU-6IV" firstAttribute="centerY" secondItem="Hi0-BZ-6xW" secondAttribute="centerY" id="OkE-mx-L0d"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6wo-8b-XuM" secondAttribute="bottom" constant="8" id="P3g-oT-mM9"/>
                             <constraint firstItem="vqq-81-ywM" firstAttribute="leading" secondItem="kDv-Tg-cBG" secondAttribute="trailing" constant="8" id="QSj-PP-OlP"/>
@@ -168,7 +168,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="NfS-tA-ng2" secondAttribute="trailing" constant="40" id="SSA-zV-8Xw"/>
                             <constraint firstItem="NfS-tA-ng2" firstAttribute="leading" secondItem="K5T-ds-UB7" secondAttribute="trailing" constant="8" id="Sa6-Sj-dhC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fwz-tk-Ana" secondAttribute="bottom" id="TXy-A8-07o"/>
-                            <constraint firstItem="fwz-tk-Ana" firstAttribute="top" secondItem="NfS-tA-ng2" secondAttribute="bottom" id="Vgb-uo-3UT"/>
+                            <constraint firstItem="fwz-tk-Ana" firstAttribute="top" secondItem="NfS-tA-ng2" secondAttribute="bottom" constant="8" id="Vgb-uo-3UT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JtL-bS-MCf" secondAttribute="bottom" id="Zk9-7m-rJK"/>
                             <constraint firstItem="TWa-PE-66p" firstAttribute="centerX" secondItem="6wo-8b-XuM" secondAttribute="centerX" id="azG-9b-pgJ"/>
                             <constraint firstItem="Usi-x4-Ici" firstAttribute="centerX" secondItem="vzJ-PG-6dk" secondAttribute="centerX" id="gLE-gg-Vga"/>
@@ -176,7 +176,7 @@
                             <constraint firstItem="2AA-FQ-Gkx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="20" id="pbr-4F-Nbn"/>
                             <constraint firstItem="K5T-ds-UB7" firstAttribute="centerY" secondItem="vqq-81-ywM" secondAttribute="centerY" id="pvT-gK-I1i"/>
                             <constraint firstItem="kDv-Tg-cBG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="55" id="sG8-9g-VKn"/>
-                            <constraint firstItem="Hi0-BZ-6xW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="tpv-r6-EhZ"/>
+                            <constraint firstItem="Hi0-BZ-6xW" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="tpv-r6-EhZ"/>
                             <constraint firstItem="fwz-tk-Ana" firstAttribute="top" secondItem="vqq-81-ywM" secondAttribute="bottom" constant="107" id="uIb-jf-Kb1"/>
                             <constraint firstItem="NxV-Pg-eGN" firstAttribute="centerX" secondItem="2AA-FQ-Gkx" secondAttribute="centerX" id="wIp-jO-JQv"/>
                             <constraint firstItem="Usi-x4-Ici" firstAttribute="centerY" secondItem="vzJ-PG-6dk" secondAttribute="centerY" id="ykA-Qc-Gi9"/>

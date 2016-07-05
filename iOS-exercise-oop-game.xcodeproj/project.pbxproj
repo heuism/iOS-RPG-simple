@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB3624031D2B706C00E7D559 /* Sword Swing.wav in Resources */ = {isa = PBXBuildFile; fileRef = EB3624021D2B706C00E7D559 /* Sword Swing.wav */; };
 		EB7568A41D2AAC15009D1CF1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7568A31D2AAC15009D1CF1 /* AppDelegate.swift */; };
 		EB7568A61D2AAC15009D1CF1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7568A51D2AAC15009D1CF1 /* ViewController.swift */; };
 		EB7568A91D2AAC15009D1CF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB7568A71D2AAC15009D1CF1 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EB3624021D2B706C00E7D559 /* Sword Swing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Sword Swing.wav"; sourceTree = "<group>"; };
 		EB7568A01D2AAC15009D1CF1 /* iOS-exercise-oop-game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-exercise-oop-game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB7568A31D2AAC15009D1CF1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB7568A51D2AAC15009D1CF1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 		EB7568A21D2AAC15009D1CF1 /* iOS-exercise-oop-game */ = {
 			isa = PBXGroup;
 			children = (
+				EB3624021D2B706C00E7D559 /* Sword Swing.wav */,
 				EB7568BB1D2AB5BC009D1CF1 /* Minecraft.ttf */,
 				EB7568A31D2AAC15009D1CF1 /* AppDelegate.swift */,
 				EB7568A51D2AAC15009D1CF1 /* ViewController.swift */,
@@ -131,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB3624031D2B706C00E7D559 /* Sword Swing.wav in Resources */,
 				EB7568AE1D2AAC15009D1CF1 /* LaunchScreen.storyboard in Resources */,
 				EB7568AB1D2AAC15009D1CF1 /* Assets.xcassets in Resources */,
 				EB7568BC1D2AB5BC009D1CF1 /* Minecraft.ttf in Resources */,
@@ -267,6 +271,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "iOS-exercise-oop-game/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hientran.iOS-exercise-oop-game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -279,6 +284,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "iOS-exercise-oop-game/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hientran.iOS-exercise-oop-game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -305,6 +311,7 @@
 				EB7568B41D2AAC15009D1CF1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

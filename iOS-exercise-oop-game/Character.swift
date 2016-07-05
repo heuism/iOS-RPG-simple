@@ -49,9 +49,10 @@ class Character {
         self.characterImg = img
     }
     
-    func gotHit(hitpoint: Int) -> Bool {
-        _playerHP -= hitpoint
-        return true
+    func gotHit(hitpoint: Int) -> Int {
+        let rand = Int(arc4random_uniform(UInt32(hitpoint)))
+        _playerHP -= rand
+        return rand
     }
     
     func isAlive() -> Bool {

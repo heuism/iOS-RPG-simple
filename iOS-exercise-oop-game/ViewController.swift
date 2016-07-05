@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
 
-    let MAX_TOTAL = 200
+    let MAX_TOTAL = 500
     
     @IBOutlet weak var player1Img: UIImageView!
     @IBOutlet weak var player2Img: UIImageView!
@@ -24,12 +25,19 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var player2AtkBG: UIButton!
     @IBOutlet weak var player2AtkLbl: UIButton!
+    
+    var btnSound: AVAudioPlayer!
 
     var player1Image: UIImage!
     var player2Image: UIImage!
     
     var player1: Character!
     var player2: Character!
+    
+    var player1Timer: Timer?
+    var player2Timer: Timer?
+    
+    var hitpoint: Int = 0
     
     @IBOutlet weak var player2HP: UILabel!
     @IBOutlet weak var player1HP: UILabel!
@@ -38,25 +46,52 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+//        let path = Bundle.main().pathForResource("Sword Swing", ofType: "wav")
+//        
+//        let soundURL = URL(fileURLWithPath: path!)
+//        
+//        do {
+//            try btnSound = AVAudioPlayer(contentsOf: soundURL)
+//            btnSound.prepareToPlay()
+//        } catch let err as NSError {
+//            print(err.debugDescription)
+//        }
+
+        let path = Bundle.main().pathForResource("Sword Swing", ofType: "wav")
+        let soundURL = URL(fileURLWithPath: path!)
+        do {
+            try btnSound = AVAudioPlayer(contentsOf: soundURL)
+            btnSound.prepareToPlay()
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
         initData()
     }
 
     @IBAction func BtnPress(_ sender: UIButton) {
+        playSound()
         switch sender.tag {
         case 1:
-            player2.gotHit(hitpoint: player1.playerAttackPwr)
+            if ((player2Timer?.isValid) != nil) {
+                player2Timer?.invalidate()
+            }
+            hitpoint = player2.gotHit(hitpoint: player1.playerAttackPwr)
             updateHP(player: player2)
-            updateResult(result: "Player 1 got hit \(player2.playerAttackPwr)")
+            updateResult(result: "\(player2.playerName) got hit \(hitpoint) dmg")
             player2AtkBG.isEnabled = false
             player2AtkLbl.isEnabled = false
-            Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(ViewController.reEnableTheAttack), userInfo: nil, repeats: false)
+            player2Timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(ViewController.reEnableTheAttack), userInfo: nil, repeats: false)
         case 2:
+            if ((player1Timer?.isValid) != nil) {
+                player1Timer?.invalidate()
+            }
             player1.gotHit(hitpoint: player2.playerAttackPwr)
             updateHP(player: player1)
-            updateResult(result: "Player 1 got hit \(player1.playerAttackPwr)")
+            hitpoint = player2.gotHit(hitpoint: player1.playerAttackPwr)
+            updateResult(result: "\(player1.playerName) got hit \(hitpoint) dmg")
             player1AtkBG.isEnabled = false
             player1AtkLbl.isEnabled = false
-            Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(ViewController.reEnableTheAttack), userInfo: nil, repeats: false)
+            player1Timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(ViewController.reEnableTheAttack), userInfo: nil, repeats: false)
         case 3:
             initData()
         default:
@@ -93,10 +128,12 @@ class ViewController: UIViewController {
     }
     
     func generatePlayers() {
-        player1 = Character(img: player1Image, name: "HienTran", hp: 130, pwr: 70)
+        player1 = Character(img: player1Image, name: "HienTran", hp: 450, pwr: MAX_TOTAL - 450)
         updateHP(player: player1)
-        player2 = Character(img: player2Image, name: "DuongPhan", hp: 100, pwr: 100)
+        //player1Timer = Timer()
+        player2 = Character(img: player2Image, name: "DuongPhan", hp: 420 , pwr: MAX_TOTAL - 420)
         updateHP(player: player2)
+        //player2Timer = Timer()
     }
     
     func updateHP(player: Character) {
@@ -118,6 +155,13 @@ class ViewController: UIViewController {
                 updateResult(result: "Player2 die!!!")
             }
         }
+    }
+    
+    func playSound() {
+        if btnSound.isPlaying {
+            btnSound.stop()
+        }
+        btnSound.play()
     }
     
     func updateResult(result: String) {
